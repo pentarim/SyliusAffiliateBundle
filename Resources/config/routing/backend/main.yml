@@ -1,0 +1,31 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_backend_affiliate_affiliate:
+    resource: @SyliusAffiliateBundle/Resources/config/routing/backend/affiliate.yml
+    prefix: /affiliate/affiliates
+
+sylius_backend_affiliate_banners:
+    resource: @SyliusAffiliateBundle/Resources/config/routing/backend/banner.yml
+    prefix: /affiliate/banners
+
+sylius_backend_affiliate_goals:
+    resource: @SyliusAffiliateBundle/Resources/config/routing/backend/goal.yml
+    prefix: /affiliate/goals
+
+sylius_backend_affiliate_provisions:
+    resource: @SyliusAffiliateBundle/Resources/config/routing/backend/provision.yml
+    prefix: /affiliate/provisions
+
+sylius_backend_affiliate_rules:
+    resource: @SyliusAffiliateBundle/Resources/config/routing/backend/rule.yml
+    prefix: /affiliate/rules
+
+sylius_backend_affiliate_settings:
+    path: /settings/affiliate
+    defaults:
+        _controller: sylius.controller.settings:updateAction
+        schema: sylius_affiliate
+        template: SyliusAffiliateBundle:Backend/Settings:affiliate.html.twig
+
+

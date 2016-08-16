@@ -1,0 +1,47 @@
+<?php
+
+/*
+ * This file is part of the Sylius package.
+ *
+ * (c) Paweł Jędrzejewski
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Pentarim\SyliusAffiliateBundle\Provision;
+
+use Doctrine\Common\Persistence\ObjectManager;
+use Pentarim\SyliusAffiliateBundle\Model\AffiliateInterface;
+use Pentarim\SyliusAffiliateBundle\Model\AffiliateGoalInterface;
+use Sylius\Component\Registry\ServiceRegistryInterface;
+
+class ProvisionApplicator implements ProvisionApplicatorInterface
+{
+    protected $registry;
+    protected $manager;
+
+    public function __construct(ServiceRegistryInterface $registry, ObjectManager $manager)
+    {
+        $this->registry   = $registry;
+        $this->manager    = $manager;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function apply($subject, AffiliateInterface $affiliate, AffiliateGoalInterface $goal)
+    {
+        foreach ($goal->getProvisions() as $provision) {
+            $this->registry
+                ->get($provision->getType())
+                ->apply($subject, $provision, $affiliate)
+            ;
+
+            $goal->incrementUsed();
+        }
+
+        $this->manager->persist($goal);
+        $this->manager->flush();
+    }
+}

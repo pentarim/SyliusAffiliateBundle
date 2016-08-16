@@ -1,0 +1,7 @@
+sylius_backend_affiliate:
+    resource: "@SyliusAffiliateBundle/Resources/config/routing/backend/main.yml"
+    prefix: /administration
+
+sylius_frontend_affiliate:
+    resource: "@SyliusAffiliateBundle/Resources/config/routing/frontend/main.yml"
+

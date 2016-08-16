@@ -1,0 +1,29 @@
+sylius_account_affiliate_index:
+    path: /account/affiliate
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.frontend.account.affiliate:indexAction
+
+sylius_account_affiliate_signup:
+    path: /account/affiliate/signup
+    methods: [GET,POST]
+    defaults:
+        _controller: sylius.controller.frontend.account.affiliate:createAction
+
+sylius_account_affiliate_history:
+    path: /account/affiliate/history
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.frontend.account.affiliate:historyAction
+
+sylius_account_affiliate_referrals:
+    path: /account/affiliate/referrals
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.frontend.account.affiliate:referralsAction
+
+sylius_account_affiliate_invitations:
+    path: /account/affiliate/invitations
+    methods: [GET, POST]
+    defaults:
+        _controller: sylius.controller.frontend.account.affiliate:invitationsAction

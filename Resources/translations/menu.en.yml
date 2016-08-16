@@ -1,0 +1,14 @@
+# This file is part of the Sylius package.
+
+sylius:
+    backend:
+        menu:
+            sidebar:
+                affiliates: Affiliates
+                affiliate_banner: Affiliate banners
+                affiliate_goal: Affiliate goals
+                affiliate_settings: Affiliate settings
+    frontend:
+        menu:
+            account:
+                affiliate: Affiliation
