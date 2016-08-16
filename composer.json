@@ -19,9 +19,9 @@
         "php": "^5.5.9|^7.0",
 
         "symfony/framework-bundle":        "^2.7.7",
-        "sylius/core-bundle":              "0.18.*@dev",
-        "sylius/mailer-bundle":            "0.18.*@dev",
-        "sylius/resource-bundle":          "0.18.*@dev"
+        "sylius/core-bundle":              "0.19.*@dev",
+        "sylius/mailer-bundle":            "0.19.*@dev",
+        "sylius/resource-bundle":          "0.19.*@dev"
     },
     "require-dev": {
         "phpspec/phpspec": "^2.4",
@@ -38,7 +38,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.18-dev"
+            "dev-master": "0.19-dev"
         }
     }
 }
