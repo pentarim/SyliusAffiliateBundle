@@ -29,7 +29,7 @@ class ReferrerConfigurationType extends AbstractType
         $affiliateRepository = $this->affiliateRepository;
 
         $builder
-            ->add('affiliate', 'sylius_entity_to_identifier', array(
+            ->add('affiliate', 'sylius_affiliate_from_identifier', array(
                 'label'         => 'sylius.form.rule.referrer_configuration.affiliate',
                 'class'         => $affiliateRepository->getClassName(),
                 'query_builder' => function () use ($affiliateRepository) {
