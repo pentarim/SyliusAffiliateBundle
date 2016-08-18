@@ -40,6 +40,7 @@ use Pentarim\SyliusAffiliateBundle\Model\Banner;
 use Pentarim\SyliusAffiliateBundle\Form\Type\BannerType;
 use Pentarim\SyliusAffiliateBundle\Model\Invitation;
 use Pentarim\SyliusAffiliateBundle\Model\Reward;
+use Sylius\Bundle\ResourceBundle\Form\Type\ResourceFromIdentifierType;
 
 /**
  * @author Joseph Bielawski <stloyd@gmail.com>
@@ -103,7 +104,8 @@ class Configuration implements ConfigurationInterface
                                         ->arrayNode('form')
                                             ->addDefaultsIfNotSet()
                                             ->children()
-                                                ->scalarNode('form')->defaultValue(AffiliateType::class)->end()
+                                                ->scalarNode('default')->defaultValue(AffiliateType::class)->end()
+                                                ->scalarNode('from_identifier')->defaultValue(ResourceFromIdentifierType::class)->cannotBeEmpty()->end()
                                             ->end()
                                         ->end()
                                     ->end()
