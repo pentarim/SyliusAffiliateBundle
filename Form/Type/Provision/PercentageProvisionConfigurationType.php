@@ -27,11 +27,12 @@ class PercentageProvisionConfigurationType extends AbstractType
         $builder
             ->add('percentage', 'percent', array(
                 'label' => 'sylius.form.provision.percentage_provision_configuration.percentage',
+                'type'  => 'integer',
                 'constraints' => array(
                     new NotBlank(),
                     new Type(array('type' => 'numeric')),
                     new Range(array('min' => 1, 'max' => 100)),
-                ),
+                )
             ))
         ;
     }
