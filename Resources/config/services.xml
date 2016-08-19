@@ -84,6 +84,8 @@
 
         <parameter key="sylius.controller.frontend.account.affiliate.class">Pentarim\SyliusAffiliateBundle\Controller\Frontend\Account\AffiliateController</parameter>
 
+        <parameter key="sylius.validator.affiliate.date_range.class">Pentarim\SyliusAffiliateBundle\Validator\DateRangeValidator</parameter>
+
     </parameters>
 
     <services>
@@ -273,6 +275,9 @@
             </call>
         </service>
 
+        <service id="sylius.validator.affiliate.date_range" class="%sylius.validator.affiliate.date_range.class%">
+            <tag name="validator.constraint_validator" alias="sylius_affiliate_date_range_validator" />
+        </service>
     </services>
 
 </container>
